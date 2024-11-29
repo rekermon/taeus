@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAEU - Tu compañero de viajes y entretenimiento</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Pantalla de Carga -->
+  <div id="loading-screen" class="loading-screen">
+    <h1>TAEU</h1>
+  </div>
+
+  <!-- Pantalla Principal -->
+  <div id="main-screen" class="screen">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <div class="buttons">
+      <button onclick="navigateTo('flights')">Ver vuelos</button>
+      <button onclick="navigateTo('buy-tickets')">Comprar boletos</button>
+      <button onclick="navigateTo('track-bag')">Seguir maleta</button>
+      <button onclick="navigateTo('emergency-alerts')">Alertas de emergencias</button>
+      <button onclick="navigateTo('games')">Juegos</button>
+      <button onclick="navigateTo('entertainment')">Entretenimiento</button>
+      <button onclick="navigateTo('news-forum')">Noticias y Foro</button>
+    </div>
+    <footer>
+      <p>TAEU©2024 - Tu compañero de viajes y entretenimiento</p>
+    </footer>
+  </div>
+
+  <!-- Pantalla de Rastrear Maleta -->
+  <div id="track-bag-screen" class="screen blue-bg">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Rastrear Maleta</h2>
+    <p>Ingresa el número de tu vuelo para rastrear tu maleta.</p>
+    <input type="text" placeholder="Número de vuelo">
+    <button>Rastrear</button>
+  </div>
+
+  <!-- Pantalla de Alertas de Emergencia -->
+  <div id="emergency-alerts-screen" class="screen blue-bg">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Alertas de Emergencia</h2>
+    <ul>
+      <li>Desastres naturales en áreas cercanas.</li>
+      <li>Posibles interrupciones en vuelos por clima severo.</li>
+      <li>Alertas de seguridad en aeropuertos.</li>
+    </ul>
+  </div>
+
+  <!-- Pantalla de Entretenimiento -->
+  <div id="entertainment-screen" class="screen blue-bg">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Entretenimiento a Bordo</h2>
+    <p>Disfruta de películas, música y más durante tu vuelo.</p>
+    <button>Ver Películas</button>
+    <button>Escuchar Música</button>
+  </div>
+
+  <!-- Pantalla de Comprar Boletos -->
+  <div id="buy-tickets-screen" class="screen">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Comprar boletos</h2>
+    <button onclick="window.location.href='https://www.aeromexico.com'">AEROMEXICO</button>
+    <button onclick="window.location.href='https://www.volaris.com'">VOLARIS</button>
+    <button onclick="window.location.href='https://www.vivaaerobus.com'">VIVA AEROBUS</button>
+    <button onclick="window.location.href='https://www.aa.com'">AMERICAN AIRLINES</button>
+    <button onclick="window.location.href='https://www.iberia.com'">IBERIA</button>
+    <button onclick="window.location.href='https://www.aircanada.com'">AIR CANADA</button>
+    <button onclick="window.location.href='https://www.delta.com'">DELTA AIR LINES</button>
+  </div>
+
+  <!-- Pantalla de Noticias y Foro -->
+  <div id="news-forum-screen" class="screen">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Regístrate o Inicia sesión</h2>
+    <form id="register-form">
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" id="username" required>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <!-- Pantalla de Juegos -->
+  <div id="games-screen" class="screen">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Juegos</h2>
+    <button onclick="startTicTacToe()">Jugar al Gato</button>
+    <!-- Agregar más juegos aquí -->
+  </div>
+
+  <!-- Pantalla de Horarios -->
+  <div id="flights-screen" class="screen">
+    <button class="back-btn" onclick="navigateTo('main')">←</button>
+    <h2>Horarios de Vuelos</h2>
+    <ul id="flight-list"></ul>
+  </div>
+
+  <!-- Pop-up de Opción Actual -->
+  <div id="popup" class="popup">
+    <p id="popup-message"></p>
+    <button onclick="closePopup()">Cerrar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
